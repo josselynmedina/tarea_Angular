@@ -1,0 +1,73 @@
+<div class="jumbotron">
+    <h1 class="text-center">
+        {{title}}
+    </h1>
+</div>
+
+<!-- Button trigger modal -->
+<div class="text-right">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Agregar
+    </button>
+</div>
+<br>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mis peliculas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <input type="text" [(ngModel)]="pelicula.Titulo" [ngModelOptions]="{standalone: true}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Titulo">
+                    <input type="text" [(ngModel)]="pelicula.Director" [ngModelOptions]="{standalone: true}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Director">
+                    <input type="text" [(ngModel)]="pelicula.Autorp" [ngModelOptions]="{standalone: true}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Autor principal">
+                    <input type="number" [(ngModel)]="pelicula.Year" [ngModelOptions]="{standalone: true}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Year">
+                    <input type="text" [(ngModel)]="pelicula.Pais" [ngModelOptions]="{standalone: true}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Pais">
+                    <input type="number" [(ngModel)]="pelicula.Rating" [ngModelOptions]="{standalone: true}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Rating">
+                    <input type="text" [(ngModel)]="pelicula.Url" [ngModelOptions]="{standalone: true}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Url">
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Director</th>
+            <th scope="col">Autorp</th>
+            <th scope="col">Year</th>
+            <th scope="col">País</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Url</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pelicula of peliculas">
+            <td>{{pelicula.Titulo}}</td>
+            <td>{{pelicula.Director}}</td>
+            <td>{{pelicula.Autorp}}</td>
+            <td>{{pelicula.Year}}</td>
+            <td>{{pelicula.Pais}}</td>
+            <td>{{pelicula.Rating}}</td>
+            <td>{{pelicula.Url}}</td>
+            <td>
+                <a href="{{pelicula.Url}}">
+                    <span class="ion-arrow-right-b"></span>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+{
+    "name": "Peliculas",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "Titulo": {
+            "type": "string",
+            "required": true
+        },
+        "Director": {
+            "type": "string",
+            "required": true
+        },
+        "Actorp": {
+            "type": "string"
+        },
+        "Year": {
+            "type": "number",
+            "required": true
+        },
+        "Pais": {
+            "type": "string",
+            "required": true
+        },
+        "Rating": {
+            "type": "number",
+            "required": true
+        },
+        "Url": {
+            "type": "string",
+            "required": true
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}
